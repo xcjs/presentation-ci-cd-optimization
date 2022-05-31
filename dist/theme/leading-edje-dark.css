@@ -63,6 +63,10 @@ body,
     display: flex;
 }
 
+.block-center {
+    margin: auto;
+}
+
 .text-center {
     text-align: center;
 }
