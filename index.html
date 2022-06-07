@@ -4,11 +4,12 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>CI/CD Optimization with a Case Study Involving Ansible</title>
+		<title>CI/CD Optimization with a Case Study Involving Ansible and GitLab</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/leading-edje-dark.css">
+		<link rel="stylesheet" href="dist/custom.css">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -18,9 +19,9 @@
 			<div class="slides">
 				<section>
 					<section>
-						<h1>CI/CD Optimization with a Case Study Involving Ansible</h1>
+						<h1>CI/CD Optimization with a Case Study Involving Ansible and GitLab</h1>
 						<p><small>Presented by Zackary Lowery</small></p>
-						<p><small>Press your spacebar to navigate forward. »</small></p>
+						<p><small>Press your space bar to navigate forward. »</small></p>
 					</section>
 					<section>
 						<h1>
@@ -28,12 +29,118 @@
 							Iteratively
 						</h1>
 					</section>
+				</section>
+				<section>
+					<section>
+						<h2>In Review</h2>
+					</section>
 					<section>
 						<p>
 							This presentation is a spiritual follow-up to
 							<a href="https://xcjs.github.io/presentation-ansible-xcjs/">Ansible - Putting IaC in Your CI/CD</a>.
 						</p>
 						<img class="block-center" src="images/qr-code-part-1.png" alt="QR Code Link to Part 1">
+					</section>
+					<section>
+						<h3>
+							What is Ansible?
+						</h3>
+						<div class="row">
+							<div class="col">
+								<p>
+									Ansible is a state-management based IaC solution for
+									host configuration.
+								</p>
+								<p>
+									<a href="https://www.ansible.com/">https://www.ansible.com/</a>
+								</p>
+							</div>
+							<div class="col">
+								<img class="block-center" src="images/ansible-logo.svg" alt="Ansible Logo">
+							</div>
+						</div>
+					</section>
+					<section class="slide-how-am-i-using-ansible">
+						<h3>
+							How am I using Ansible?
+						</h3>
+						<div class="row">
+							<div class="col">
+								<p>I...have a lot of hosts.</p>
+								<p><small>(But not as many as last time.)</small></p>
+								<img class="gitlab-logo block-center" src="images/gitlab-logo.png" alt="GitLab Logo">
+							</div>
+							<div class="col">
+								<table class="table-hosts">
+									<tbody>
+										<tr>
+											<td>
+												AERO15
+											</td>
+											<td>
+												<img src="images/windows-10-logo.svg" alt="Windows 10 Logo">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												K8S[0-4]
+											</td>
+											<td>
+												<img src="images/raspbian-logo.webp" alt="Raspbian Logo">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												MDEV
+											</td>
+											<td>
+												<img src="images/ubuntu-logo.svg" alt="Ubuntu Logo">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												MDEV2
+											</td>
+											<td>
+												<img src="images/windows-10-logo.svg" alt="Windows 10 Logo">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												UDEV
+											</td>
+											<td>
+												<img src="images/ubuntu-logo.svg" alt="Ubuntu Logo">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												USERV
+											</td>
+											<td>
+												<img src="images/ubuntu-logo.svg" alt="Ubuntu Logo">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												XCJS
+											</td>
+											<td>
+												<img src="images/ubuntu-logo.svg" alt="Ubuntu Logo">
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Z390
+											</td>
+											<td>
+												<img src="images/windows-10-logo.svg" alt="Windows 10 Logo">
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</section>
 				</section>
 				<section>

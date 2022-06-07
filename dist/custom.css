@@ -1,0 +1,16 @@
+.reveal .slide-how-am-i-using-ansible > .row > .col {
+    padding: 0 1rem;
+}
+
+.reveal .slide-how-am-i-using-ansible .table-hosts img {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    width: 2rem;
+}
+
+.reveal .slide-how-am-i-using-ansible .gitlab-logo {
+    height: 10rem;
+}
