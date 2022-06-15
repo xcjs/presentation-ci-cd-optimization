@@ -18,3 +18,7 @@
 .reveal .slide-how-am-i-using-ansible .gitlab-logo {
     height: 10rem;
 }
+
+.reveal .slide-testing-options table {
+    font-size: 1.75rem;
+}
