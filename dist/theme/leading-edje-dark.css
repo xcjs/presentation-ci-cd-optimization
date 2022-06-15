@@ -25,10 +25,6 @@ body,
     background-color: #222;
 }
 
-th, td {
-    vertical-align: top;
-}
-
 .reveal {
     font-family: "Source Sans Pro", Helvetica, sans-serif;
     font-size: 42px;
@@ -63,16 +59,16 @@ th, td {
     margin: auto;
 }
 
-.row {
+.reveal .row {
     display: flex;
     justify-content: space-around;
 }
 
-.block-center {
+.reveal .block-center {
     margin: auto;
 }
 
-.text-center {
+.reveal .text-center {
     text-align: center;
 }
 
@@ -118,6 +114,11 @@ th, td {
 .reveal p {
     margin: 20px 0;
     line-height: 1.3;
+}
+
+.reveal th,
+.reveal td {
+    vertical-align: top;
 }
 
 /* Ensure certain elements are never larger than the slide itself */
@@ -311,6 +312,7 @@ th, td {
 }
 
 .reveal section img.plain {
+    background: none;
     border: 0;
     box-shadow: none;
 }

@@ -22,3 +22,8 @@
 .reveal .slide-testing-options table {
     font-size: 1.75rem;
 }
+
+.reveal .slide-testing-options table img {
+    height: 4rem;
+    width: 100%;
+}
