@@ -72,6 +72,10 @@ body,
     text-align: center;
 }
 
+.reveal .text-nowrap {
+    white-space: nowrap;
+}
+
 /*********************************************
  * HEADERS
  *********************************************/
@@ -106,6 +110,16 @@ body,
 
 .reveal h4 {
     font-size: 1em;
+}
+
+.reveal section h4 img {
+    background: none;
+    border: 0;
+    display: inline-block;
+    height: 1em;
+    margin: .25em;
+    padding: 0;
+    vertical-align: middle;
 }
 
 /*********************************************
