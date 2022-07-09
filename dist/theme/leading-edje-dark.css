@@ -59,9 +59,59 @@ body,
     margin: auto;
 }
 
+.reveal .flex {
+    display: flex;
+}
+
 .reveal .row {
     display: flex;
     justify-content: space-around;
+}
+
+.reveal .grid {
+    display: grid;
+}
+
+.reveal .flowchart
+{
+    display: grid;
+}
+
+.reveal .flowchart .flow-item {
+    background-color: rgba(0, 0, 0, .25);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.reveal .flowchart > * {
+    align-self: center;
+}
+
+.reveal .flowchart .flow-decision {
+    height: 0;
+    border: 10rem solid transparent;
+    border-bottom-color: rgba(0, 0, 0, .25);;
+    position: relative;
+    top: -10rem;
+    width: 0;
+}
+
+.reveal .flowchart .flow-decision span {
+    left: -5rem;
+    position: absolute;
+    top: 8rem;
+    white-space: nowrap;
+}
+
+.reveal .flowchart .flow-decision:after {
+    border: 10rem solid transparent;
+    border-top-color: rgba(0, 0, 0, .25);
+    content: '';
+    height: 0;
+    left: -10rem;
+    position: absolute;
+    top: 10rem;
+    width: 0;
 }
 
 .reveal .block-center {
@@ -75,6 +125,7 @@ body,
 .reveal .text-nowrap {
     white-space: nowrap;
 }
+
 
 /*********************************************
  * HEADERS

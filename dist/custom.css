@@ -27,3 +27,7 @@
     height: 4rem;
     width: 100%;
 }
+
+.reveal .slide-flowchart-iteration-1 div.flowchart {
+    grid-template-columns: repeat(3, 1fr);
+}
