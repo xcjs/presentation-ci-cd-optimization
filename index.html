@@ -377,15 +377,26 @@
 				<section class="slide-flowchart-iteration-1">
 					<h2>Iteration 1</h2>
 					<div class="flowchart">
-						<div class="flow-item">Create Virtual Machine</div>
-						<div>Cell 2</div>
-						<div>Cell 3</div>
-						<div>↓</div>
-						<div>Cell 5</div>
-						<div>Cell 6</div>
+						<div class="flow-decision"><span>Next OS?</span></div>
+						<div>
+							<div>Yes</div>
+							<div class="arrow">→</div>
+						</div>
+						<div class="flow-item">Create VM</div>
+						<div class="arrow rotate-270">↰</div>
+						<div class="flow-item">Install Dependencies</div>
+						<div class="arrow">↲</div>
 						<div class="flow-decision"><span>Next Role?</span></div>
-						<div>→</div>
-						<div class="flow-item">Install Role to Virtual Machine</div>
+						<div>
+							<div>Yes</div>
+							<div class="arrow">→</div>
+						</div>
+						<div>
+							<div class="flow-item">VM Runs Role Against Itself</div>
+						</div>
+						<div class="arrow rotate-270">↱</div>
+						<div class="arrow">←</div>
+						<div class="arrow">↲</div>
 					</div>
 				</section>
 			</div>

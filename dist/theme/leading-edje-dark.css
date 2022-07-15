@@ -75,6 +75,11 @@ body,
 .reveal .flowchart
 {
     display: grid;
+    font-size: 1.5rem;
+}
+
+.reveal .flowchart .arrow {
+    font-size: 3rem;
 }
 
 .reveal .flowchart .flow-item {
@@ -89,29 +94,44 @@ body,
 
 .reveal .flowchart .flow-decision {
     height: 0;
-    border: 10rem solid transparent;
-    border-bottom-color: rgba(0, 0, 0, .25);;
+    border: 5rem solid transparent;
+    border-bottom-color: rgba(0, 0, 0, .25);
+    margin: auto;
     position: relative;
-    top: -10rem;
+    top: -5rem;
+    width: 0;
+}
+
+.reveal .flowchart .flow-decision:after {
+    border: 5rem solid transparent;
+    border-top-color: rgba(0, 0, 0, .25);
+    content: '';
+    height: 0;
+    left: -5rem;
+    position: absolute;
+    top: 5rem;
     width: 0;
 }
 
 .reveal .flowchart .flow-decision span {
+    display: block;
+    margin-top: 4rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
     left: -5rem;
-    position: absolute;
-    top: 8rem;
     white-space: nowrap;
+    width: 10rem;
 }
 
-.reveal .flowchart .flow-decision:after {
-    border: 10rem solid transparent;
-    border-top-color: rgba(0, 0, 0, .25);
-    content: '';
-    height: 0;
-    left: -10rem;
-    position: absolute;
-    top: 10rem;
-    width: 0;
+.reveal .flowchart .rotate-90 {
+    display: block;
+    transform: rotate(90deg);
+}
+
+.reveal .flowchart .rotate-270 {
+    display: block;
+    transform: rotate(270deg);
 }
 
 .reveal .block-center {
