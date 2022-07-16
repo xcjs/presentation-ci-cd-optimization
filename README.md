@@ -1,3 +1,8 @@
+# CI/CD Optimization with a Case Study Involving Ansible and GitLab
+
+This presentation is available to view online at
+[https://xcjs.github.io/presentation-ci-cd-optimization/](https://xcjs.github.io/presentation-ci-cd-optimization/)
+
 <p align="center">
   <a href="https://revealjs.com">
   <img src="https://hakim-static.s3.amazonaws.com/reveal-js/logo/v1/reveal-black-text-sticker.png" alt="reveal.js" width="500">
@@ -60,7 +65,7 @@ Want to create your presentation using a visual editor? Try the official reveal.
 <br>
 <br>
 
---- 
+---
 <div align="center">
   MIT licensed | Copyright © 2011-2022 Hakim El Hattab, https://hakim.se
 </div>
