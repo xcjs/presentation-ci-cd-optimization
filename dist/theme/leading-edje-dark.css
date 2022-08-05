@@ -183,9 +183,10 @@ body,
     font-size: 1em;
 }
 
-.reveal section h4 img {
+.reveal section h3 img {
     background: none;
     border: 0;
+    box-shadow: none;
     display: inline-block;
     height: 1em;
     margin: .25em;
