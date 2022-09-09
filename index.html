@@ -449,7 +449,7 @@
 						</ul>
 					</section>
 					<section class="slide-flowchart-iteration-2-flow">
-						<h2>Iteration 2 Flow</h2>
+						<h3>Iteration 2 Flow</h2>
 						<div class="flowchart">
 							<div class="flow-decision"><span>Role Changed?</span></div>
 							<div>
@@ -473,7 +473,62 @@
 						</div>
 					</section>
 					<section>
-						<h2>Implement GitLab CI/CD Changes Directive</h2>
+						<h3>Implement GitLab CI/CD Rules:Changes Directive</h3>
+						<div class="row">
+							<div class="col">
+								<ul>
+									<li>Not to be confused with the changes directive (obsolete)</li>
+									<li>Requires a permanent/protected branch to compare against</li>
+								</ul>
+							</div>
+						</div>
+					</section>
+					<section>
+						<h3>Rules:Changes Example</h3>
+						<pre><code data-trim data-noescape>
+							${role} Test:
+							  stage: Test
+							  rules:
+							    - if: '$CI_COMMIT_BRANCH == "testing"'
+							      changes:
+							        - roles/.common/tasks/*.yml
+							        - roles/${role}/tasks/*.yml
+							        - test/generate-tests.sh
+							        - .gitlab-ci.yml
+							        - Vagrantfile
+						</code></pre>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Iteration 3</h2>
+						<ul>
+							<li>Separate Tasks Per Supported OS</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Iteration 4</h2>
+						<ul>
+							<li>
+								Prepare virtual machine images once and
+								utilize disk snapshots
+							</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Future Iterations?</h2>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>
+							Wait - How am I Iterating Over Roles in the First
+							Place?
+						</h2>
 					</section>
 				</section>
 			</div>
