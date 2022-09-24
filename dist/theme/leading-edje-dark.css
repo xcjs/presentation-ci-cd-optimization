@@ -124,6 +124,10 @@ body,
     width: 10rem;
 }
 
+.reveal .flowchart .flow-decision.multiline span {
+    margin-top: 3rem;
+}
+
 .reveal .flowchart .rotate-90 {
     display: block;
     transform: rotate(90deg);

@@ -29,6 +29,7 @@
 }
 
 .reveal .slide-flowchart-iteration-1-flow div.flowchart,
-.reveal .slide-flowchart-iteration-2-flow div.flowchart {
+.reveal .slide-flowchart-iteration-2-flow div.flowchart,
+.reveal .slide-flowchart-iteration-3-flow div.flowchart {
     grid-template-columns: repeat(3, 1fr);
 }
