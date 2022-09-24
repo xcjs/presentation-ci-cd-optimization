@@ -400,7 +400,7 @@
 							</div>
 							<div class="flow-item">VM Runs Role Against Itself</div>
 							<div class="arrow rotate-270">↱</div>
-							<div class="arrow">←</div>
+							<div class="flow-item">Destroy VM</div>
 							<div class="arrow">↲</div>
 						</div>
 					</section>
@@ -472,7 +472,7 @@
 							</div>
 							<div class="flow-item">VM Runs Role Against Itself</div>
 							<div class="arrow rotate-270">↰</div>
-							<div class="arrow">←</div>
+							<div class="flow-item">Destroy VM</div>
 							<div class="arrow">↲</div>
 							<div class="flow-decision"><span>Next Role?</span></div>
 						</div>
@@ -514,32 +514,77 @@
 					<section class="slide-flowchart-iteration-3-flow">
 						<h3>Iteration 3 Flow</h2>
 							<div class="flowchart">
+								<div>
+									<div>Start</div>
+									<div class="arrow">↱</div>
+								</div>
 								<div class="flow-decision multiline">
 									<span>
-										Operating System
+										Role Changed for
 										<br>
-										Role Changed?
+										Operating System?
 									</span>
 								</div>
 								<div>
 									<div>Yes</div>
 									<div class="arrow">→</div>
 								</div>
-								<div class="flow-item"><span>Prepare VM Disk Images</span></div>
+								<div class="flow-item"><span>Prepare VM Disk Image</span></div>
+								<div class="arrow">↰</div>
+								<div>
+									<div>Yes</div>
+									<div class="arrow">↑</div>
+								</div>
 								<div class="arrow rotate-270">↰</div>
 								<div class="flow-item">Install Dependencies</div>
 								<div class="arrow">↲</div>
+								<div class="arrow">↑</div>
+								<div class="flow-decision"><span>Next Role?</span></div>
 								<div class="flow-item">Start VM</div>
 								<div>
 									<div>Yes</div>
 									<div class="arrow">→</div>
 								</div>
 								<div class="flow-item">VM Runs Role Against Itself</div>
+								<div class="arrow">↑</div>
+								<div class="arrow">↑</div>
 								<div class="arrow rotate-270">↰</div>
-								<div class="arrow">←</div>
+								<div class="flow-item">Destroy VM</div>
 								<div class="arrow">↲</div>
-								<div class="flow-decision"><span>Next Role?</span></div>
+								<div class="arrow">↑</div>
+								<div>
+									<div>No</div>
+									<div class="arrow rotate-90">↲</div>
+								</div>
+								<div class="flow-decision"><span>Next OS?</span></div>
+								<div>
+									<div>Yes</div>
+									<div class="arrow">→</div>
+								</div>
+								<div>
+									<div>&nbsp;</div>
+									<div class="arrow">→</div>
+								</div>
+								<div>
+									<div>&nbsp;</div>
+									<div class="arrow rotate-90">↰</div>
+								</div>
 							</div>
+					</section>
+					<section>
+						<h3>Rules:Changes Updates</h3>
+						<pre><code data-trim data-noescape>
+							${role} Test:
+								stage: Test
+								rules:
+								- if: '$CI_COMMIT_BRANCH == "testing"'
+									changes:
+									- roles/.common/tasks/*.yml
+									- roles/${role}/tasks/*.yml
+									- test/generate-tests.sh
+									- .gitlab-ci.yml
+									- Vagrantfile
+						</code></pre>
 					</section>
 				</section>
 				<section>
