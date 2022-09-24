@@ -574,16 +574,21 @@
 					<section>
 						<h3>Rules:Changes Updates</h3>
 						<pre><code data-trim data-noescape>
-							${role} Test:
-								stage: Test
-								rules:
-								- if: '$CI_COMMIT_BRANCH == "testing"'
-									changes:
-									- roles/.common/tasks/*.yml
-									- roles/${role}/tasks/*.yml
-									- test/generate-tests.sh
-									- .gitlab-ci.yml
-									- Vagrantfile
+							${role}/Ubuntu 20.04:
+							  stage: Test
+							  rules:
+							    - if: '$CI_COMMIT_BRANCH == "testing"'
+							    changes:
+							      - roles/.common/tasks/*.yml
+							      - roles/${role}/tasks/main.yml
+							      - roles/${role}/tasks/linux.yml
+							      - roles/${role}/tasks/ubuntu_20.04.yml
+							      - test/templates/ubuntu_20.04/.gitlab-ci.part.yml
+							      - test/templates/ubuntu_20.04/blacklist.yml
+							      - test/templates/ubuntu_20.04/site-test.yml
+							      - test/generate-tests.sh
+							      - .gitlab-ci.yml
+							      - Vagrantfile
 						</code></pre>
 					</section>
 				</section>
