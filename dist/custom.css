@@ -36,3 +36,7 @@
 .reveal .slide-flowchart-iteration-3-flow div.flowchart {
     grid-template-columns: repeat(5, 1fr);
 }
+
+.reveal .slide-trends-in-devops ul li {
+    white-space: nowrap;
+}
