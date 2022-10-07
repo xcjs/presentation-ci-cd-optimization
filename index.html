@@ -522,63 +522,63 @@
 					</section>
 					<section class="slide-flowchart-iteration-3-flow">
 						<h3>Iteration 3 Flow</h2>
-							<div class="flowchart">
-								<div>
-									<div>Start</div>
-									<div class="arrow">↱</div>
-								</div>
-								<div class="flow-decision multiline">
-									<span>
-										Role Changed for
-										<br>
-										Operating System?
-									</span>
-								</div>
-								<div>
-									<div>Yes</div>
-									<div class="arrow">→</div>
-								</div>
-								<div class="flow-item"><span>Prepare VM Disk Image</span></div>
-								<div class="arrow">↰</div>
-								<div>
-									<div>Yes</div>
-									<div class="arrow">↑</div>
-								</div>
-								<div class="arrow rotate-270">↰</div>
-								<div class="flow-item">Install Dependencies</div>
-								<div class="arrow">↲</div>
-								<div class="arrow">↑</div>
-								<div class="flow-decision"><span>Next Role?</span></div>
-								<div class="flow-item">Start VM</div>
-								<div>
-									<div>Yes</div>
-									<div class="arrow">→</div>
-								</div>
-								<div class="flow-item">VM Runs Role Against Itself</div>
-								<div class="arrow">↑</div>
-								<div class="arrow">↑</div>
-								<div class="arrow rotate-270">↰</div>
-								<div class="flow-item">Destroy VM</div>
-								<div class="arrow">↲</div>
-								<div class="arrow">↑</div>
-								<div>
-									<div>No</div>
-									<div class="arrow rotate-90">↲</div>
-								</div>
-								<div class="flow-decision"><span>Next OS?</span></div>
-								<div>
-									<div>Yes</div>
-									<div class="arrow">→</div>
-								</div>
-								<div>
-									<div>&nbsp;</div>
-									<div class="arrow">→</div>
-								</div>
-								<div>
-									<div>&nbsp;</div>
-									<div class="arrow rotate-90">↰</div>
-								</div>
+						<div class="flowchart">
+							<div>
+								<div>Start</div>
+								<div class="arrow">↱</div>
 							</div>
+							<div class="flow-decision multiline">
+								<span>
+									Role Changed for
+									<br>
+									Operating System?
+								</span>
+							</div>
+							<div>
+								<div>Yes</div>
+								<div class="arrow">→</div>
+							</div>
+							<div class="flow-item"><span>Prepare VM Disk Image</span></div>
+							<div class="arrow">↰</div>
+							<div>
+								<div>Yes</div>
+								<div class="arrow">↑</div>
+							</div>
+							<div class="arrow rotate-270">↰</div>
+							<div class="flow-item">Install Dependencies</div>
+							<div class="arrow">↲</div>
+							<div class="arrow">↑</div>
+							<div class="flow-decision"><span>Next Role?</span></div>
+							<div class="flow-item">Start VM</div>
+							<div>
+								<div>Yes</div>
+								<div class="arrow">→</div>
+							</div>
+							<div class="flow-item">VM Runs Role Against Itself</div>
+							<div class="arrow">↑</div>
+							<div class="arrow">↑</div>
+							<div class="arrow rotate-270">↰</div>
+							<div class="flow-item">Destroy VM</div>
+							<div class="arrow">↲</div>
+							<div class="arrow">↑</div>
+							<div>
+								<div>No</div>
+								<div class="arrow rotate-90">↲</div>
+							</div>
+							<div class="flow-decision"><span>Next OS?</span></div>
+							<div>
+								<div>Yes</div>
+								<div class="arrow">→</div>
+							</div>
+							<div>
+								<div>&nbsp;</div>
+								<div class="arrow">→</div>
+							</div>
+							<div>
+								<div>&nbsp;</div>
+								<div class="arrow rotate-90">↰</div>
+							</div>
+						</div>
 					</section>
 					<section>
 						<h3>Rules:Changes Updates</h3>
@@ -610,6 +610,77 @@
 								utilize virtual disk snapshots
 							</li>
 						</ul>
+					</section>
+					<section class="slide-flowchart-iteration-4-flow-setup">
+						<h3>Iteration 4 Flow - Setup</h2>
+						<div class="flowchart">
+							<div class="flow-decision"><span>Next OS?</span></div>
+							<div>
+								<div>Yes</div>
+								<div class="arrow">→</div>
+							</div>
+							<div class="flow-item">Create VM</div>
+							<div class="arrow rotate-270">↰</div>
+							<div class="flow-item">Provision VM<br>(Install Ansible, etc.)</div>
+							<div class="arrow">↲</div>
+							<div class="flow-item">Disk Snapshot</div>
+							<div class="arrow">→</div>
+							<div class="flow-item">Halt VM</div>
+						</div>
+					</section>
+					<section class="slide-flowchart-iteration-4-flow-testing">
+						<h3>Iteration 4 Flow - Testing</h2>
+						<div class="flowchart">
+							<div>
+								<div>Start</div>
+								<div class="arrow">↱</div>
+							</div>
+							<div class="flow-decision multiline">
+								<span>
+									Role Changed for
+									<br>
+									Operating System?
+								</span>
+							</div>
+							<div>
+								<div>Yes</div>
+								<div class="arrow">→</div>
+							</div>
+							<div class="flow-item">Restore Disk Snapshot</div>
+							<div class="arrow">↰</div>
+							<div>
+								<div>Yes</div>
+								<div class="arrow">↑</div>
+							</div>
+							<div class="arrow rotate-270">↰</div>
+							<div class="flow-item">VM Runs Role Against Itself</div>
+							<div class="arrow">↲</div>
+							<div class="arrow">↑</div>
+							<div class="flow-decision"><span>Next Role?</span></div>
+							<div class="flow-item">Halt VM</div>
+							<div class="arrow">→</div>
+							<div class="flow-decision"><span>Next OS?</span></div>
+							<div>
+								<div>Yes</div>
+								<div class="arrow rotate-90">↰</div>
+							</div>
+							<div>
+								<div>&nbsp;</div>
+								<div class="arrow rotate-90">↲</div>
+							</div>
+							<div>
+								<div>&nbsp;</div>
+								<div class="arrow">←</div>
+							</div>
+							<div>
+								<div>&nbsp;</div>
+								<div class="arrow">←</div>
+							</div>
+							<div>
+								<div>No</div>
+								<div class="arrow">↲</div>
+							</div>
+						</div>
 					</section>
 					<section>
 						<h3>Results!</h3>
