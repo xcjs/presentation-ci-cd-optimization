@@ -406,6 +406,16 @@ body,
     box-shadow: none;
 }
 
+.reveal section img.inline {
+    background: none;
+    border: 0;
+    box-shadow: none;
+    display: inline;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
 .reveal a img {
     -webkit-transition: all .15s linear;
     -moz-transition: all .15s linear;
