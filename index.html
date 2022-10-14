@@ -706,6 +706,23 @@
 							)
 						</code></pre>
 					</section>
+					<section>
+						<h3>Supported Operating Systems are Iterated</h3>
+						<pre><code data-trim data-noescape>
+							for os in "${supportedOperatingSystems[@]}"
+							do
+								templateDir="test/templates/${os}/"
+								...
+							done
+						</code></pre>
+						<p>
+							<small>
+								I <em>could</em> directly iterate the template
+								directories, but I wanted the option to manually
+								sunset supported operating systems.
+							</small>
+						</p>
+					</section>
 				</section>
 				<section>
 					<section>
