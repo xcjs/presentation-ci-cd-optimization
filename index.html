@@ -721,7 +721,7 @@
 						</code></pre>
 					</section>
 					<section>
-						<h3>Supported Operating Systems are Iterated</h3>
+						<h3>Supported Operating Systems are Iterated per Role</h3>
 						<pre><code data-trim data-noescape>
 							for os in "${supportedOperatingSystems[@]}"
 							do
@@ -736,6 +736,22 @@
 								sunset formerly supported operating systems.
 							</small>
 						</p>
+					</section>
+					<section>
+						<h3>OS-Specific Task List Files are Verified Per Role</h3>
+						<pre><code data-trim data-noescape>
+							if [ -f "${path}/tasks/${os}.yml" ]
+						      && ! containsElement "${role}" "${roleBlacklist[@]}"; then
+
+							  echo "Role ${role} supports ${os} and will be added to CI/CD."
+
+							  gitlabRoleCi=$(envsubst '$role'
+							    < "test/templates/${os}/.gitlab-ci.part.yml" )
+
+							  echo "${gitlabRoleCi}" >> ".gitlab-ci-roles.yml"
+							  ...
+							endif
+						</code></pre>
 					</section>
 				</section>
 				<section>
