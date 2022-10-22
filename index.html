@@ -713,6 +713,14 @@
 						</code></pre>
 					</section>
 					<section>
+						<h3>Supported Roles are Iterated from the Filesystem</h3>
+						<pre><code data-trim data-noescape>
+							for path in roles/*/; do # Whitespace-safe
+								role=$(basename "${path}")
+							done
+						</code></pre>
+					</section>
+					<section>
 						<h3>Supported Operating Systems are Iterated</h3>
 						<pre><code data-trim data-noescape>
 							for os in "${supportedOperatingSystems[@]}"
