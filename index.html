@@ -745,19 +745,20 @@
 						<pre><code data-trim data-noescape>
 							if [ -f "${path}/tasks/${os}.yml" ]
 						      && ! containsElement "${role}" "${roleBlacklist[@]}"; then
-
-							  echo "Role ${role} supports ${os} and will be added to CI/CD."
-
-							  gitlabRoleCi=$(envsubst '$role'
-							    < "test/templates/${os}/.gitlab-ci.part.yml" )
-
-							  echo "${gitlabRoleCi}" >> ".gitlab-ci-roles.yml"
 							  ...
 							endif
 						</code></pre>
 					</section>
 					<section>
-						<h3></h3>
+						<h3>Append to the Child Pipeline Using a Template</h3>
+						<pre><code data-trim data-noescape>
+							echo "Role ${role} supports ${os} and will be added to CI/CD."
+
+							gitlabRoleCi=$(envsubst '$role'
+							  < "test/templates/${os}/.gitlab-ci.part.yml" )
+
+							echo "${gitlabRoleCi}">> ".gitlab-ci-roles.yml"
+						</code></pre>
 					</section>
 				</section>
 				<section>
