@@ -751,6 +751,7 @@
 					</section>
 					<section>
 						<h3>Append to the Child Pipeline Using a Template</h3>
+						<h4>(Using <code>envsubst</code>)</h4>
 						<pre><code data-trim data-noescape>
 							echo "Role ${role} supports ${os} and will be added to CI/CD."
 
@@ -760,6 +761,34 @@
 							echo "${gitlabRoleCi}" >> ".gitlab-ci-roles.yml"
 						</code></pre>
 					</section>
+					<section>
+						<h3>GitLab Provided Diff Detection</h3>
+						<p>
+							.gitlab-ci.part.yml templates include
+							<code>rules:changes</code>
+							directives:
+						</p>
+						<pre><code data-trim data-noescape>
+						  - if: '$CI_COMMIT_BRANCH == "testing"'
+						    changes:
+						      - roles/.common/tasks/*.yml
+						      - roles/${role}/tasks/main.yml
+						      - roles/${role}/tasks/linux.yml
+						      - roles/${role}/tasks/ubuntu_18.04.yml
+						      - test/templates/ubuntu_18.04/.gitlab-ci.part.yml
+						      - test/templates/ubuntu_18.04/blacklist.yml
+						      - test/templates/ubuntu_18.04/playbook-test.yml
+						      - test/generate-tests.sh
+						      - .gitlab-ci.yml
+						      - Vagrantfile
+						</code></pre>
+					</section>
+					<section>
+						<h3>Caveats to <code>rules:changes</code></h3>
+						<ul>
+							<li>Requires a long-lived branch to compare against</li>
+						</ul>
+					</section>
 				</section>
 				<section>
 					<section>
@@ -767,6 +796,23 @@
 						<p>
 							...and there is!
 						</p>
+					</section>
+					<section>
+						<h3>Use Language Tooling for CI/CD Resources</h3>
+						<p>
+							<code>shellcheck</code>
+							has been a lifesaver in my case!
+						</p>
+						<pre><code data-trim data-noescape>
+						  Lint Test Generation:
+						    stage: Lint
+						    tags:
+						      - linux
+						      - shell
+						      - shellcheck
+						    script:
+						      - shellcheck test/generate-tests.sh
+						</code></pre>
 					</section>
 					<section class="slide-trends-in-devops">
 						<h3>Trends in DevOps</h3>
@@ -803,6 +849,12 @@
 									<li>Docker or LXC for simple Linux based roles?</li>
 									<li>Virtual machines for practically everything else?</li>
 								</ul>
+							</li>
+							<li>
+								Split each OS into its own child pipeline?
+								<p>
+									<small>Already done after this presentation was written!</small>
+								</p>
 							</li>
 						</ul>
 					</section>
