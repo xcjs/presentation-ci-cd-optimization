@@ -789,6 +789,33 @@
 							<li>Requires a long-lived branch to compare against</li>
 						</ul>
 					</section>
+					<section>
+						<h3>Registering the Child Pipeline (Parent)</h3>
+						<pre><code data-trim data-noescape>
+						  Generate Tests:
+						    stage: Test Setup
+						    artifacts:
+						      name: gitlab-ci-roles
+						      expire_in: 1 week
+						      paths:
+						        - .gitlab-ci-roles-ubuntu_18.04.yml
+						        - .gitlab-ci-roles-ubuntu_20.04.yml
+						        - .gitlab-ci-roles-ubuntu_22.04.yml
+						        - .gitlab-ci-roles-windows_10.yml
+						        - .gitlab-ci-roles-windows_11.yml
+						        - .vagrant/
+						</code></pre>
+					</section>
+					<section>
+						<h3>Registering the Child Pipeline (Child)</h3>
+						<pre><code data-trim data-noescape>
+						  {$role}/{$os} Test:
+						    Stage: Test
+						    needs:
+						      - pipeline: $PARENT_PIPELINE_ID
+						        job: Generate Tests
+						</code></pre>
+					</section>
 				</section>
 				<section>
 					<section>
